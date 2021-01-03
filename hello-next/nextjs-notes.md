@@ -22,11 +22,54 @@ Adding TYPESCRIPT support:
 - reload and everyting works fine
 
 
+FILE STRUCTURE:
+- `public` : all files in this directly are accessable to root directory ex. try `localhost:3000/favicon.ico` so you can have static files(imgs,txt,js etc...) or assets which you want in public
+
+- styles : for css styles we can use styles dir or we can just create/drop the css files in pages dir and change the path while importing the css files
+
+- pages : simple routing path for every file name like `/about` for `about.tsx`
+- automatically creates routes for pages , the files in pages dir should return jsx
+- the function name could be anything , filename is the route, add styles to specific route lke about.module.css 
+
+
+`_document.tsx` : used to inject our own scripts, uses 'next/document' , 
+```js
+import Document, {Html, Head, Main, NextScript } from 'next/document'
+
+export default class CustomDocument extends Document {
+  render() {
+    return( 
+      <Html>
+        <Head>
+
+        </Head>
+        <body>
+          <Main></Main>
+        </body>
+
+        <NextScript />
+
+      </Html>
+    )
+  }
+}
+```
+
+after creating the _doc.tsx save, run the dev script, so that the project files are rebuilt.
+And view the content of new documents i.e /about routes , go to  view page source , then ctrl+f custom, highlights the meta property
+
+`_app.tsx` : responsible to render every page as it takes  props and components
+```js
+function MyApp({ Component, pageProps }) {
+  console.log("HELLO FROM _app");
+  return <Component {...pageProps} />
+}
+```
+So _app for client side and _document for server side change/add of code
 
 
 
-
-
+=========== End
 
 
 

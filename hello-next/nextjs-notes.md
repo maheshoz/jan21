@@ -145,7 +145,16 @@ so we should import and add styles like `<p className={styles.container}>.....</
 - restart the dev server
 - and import as normanl css modules `file.module.scss`
 
+--------
 
+File structure : creating a folder in pages for better structure
+- create a dir in pages/ for a route 
+- ex: `/pages/page1/index.tsx`
+- goto localhost:3000/page1 to view the content
+- we can have styles module in this dir
+
+
+------
 
 =========== End
 

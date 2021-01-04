@@ -1,5 +1,6 @@
 
-### NOTE
+### NOTES
+this is a Codealong from codedamn.com
 
 1. Next.js is serverside(sends html content/pages for routes same as static not just js code) not a SPA(no reload for getting the pages,mostly) like react apps
 2. there are some `seo` and `performance` benefits
@@ -66,6 +67,83 @@ function MyApp({ Component, pageProps }) {
 }
 ```
 So _app for client side and _document for server side change/add of code
+
+------
+
+STYLING IN NEXTJS:
+
+1. **style in JSX**: these styles are component based
+```js
+// Styled jsx - to apply css to individual components
+
+function Heading(props) {
+  return(
+    <div>
+      <h1>{props.heading}</h1>
+      <style jsx>
+      // <style jsx global> //for applying style globally
+        {`
+          h1{
+            color: red;
+          }
+        `}
+      </style>
+    </div>
+  )
+}
+
+export default function About() {
+  return (
+    <div>
+      <Heading heading="h1 with jsx styles" />
+      <h3>About</h3>
+    </div>
+  ) 
+}
+```
+
+In the source we can see how the styles are added for the jsx styling
+```html
+<div>
+  <div class="jsx-1023600582">
+    <h1 class="jsx-1023600582">h1 with jsx styles</h1>
+   </div>
+   <h3>About</h3>
+ </div>
+```
+
+2. **Global styles**: as seen in the styles dir , we create a file and import in the pages
+> Note for global styles we need to import it in _app.tsx 
+```js
+import '../styles/globals.css'
+```
+3. **CSS Modules** : styles are applied only to the imported component
+```css 
+ /* syntax: Home.module.css */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+```js
+import styles from '../styles/Home.module.css'
+
+export default function Home() {
+  return (
+    <div className={styles.container}>
+     <h2>Home page</h2>
+    </div>
+  )
+}
+```
+so we should import and add styles like `<p className={styles.container}>.....</p>` in the component
+
+4. Adding SASS support
+- install sass as dev dependency `npm i sass --save-dev`
+- restart the dev server
+- and import as normanl css modules `file.module.scss`
 
 
 

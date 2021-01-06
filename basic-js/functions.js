@@ -51,6 +51,7 @@ if(!undefined){
 
 // ======== arguments keyword : it is available in every function locally,it is an of array type
 function hello() {
+  // let arguments = 'javascript' // overrides the arguments array with string type, so dont do this
   log('Hello '+ arguments[0] + arguments[1])
 } 
 

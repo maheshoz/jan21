@@ -221,8 +221,10 @@ export default function(req: NextApiRequest, res: NextApiResponse) {
 
 ```
 
+### Simple JWT Auth
 
-
+- install the package `npm i jsonwebtoken`
+- install the types `npm i @types/jsonwebtoken --save-dev`
 
 
 =========== End

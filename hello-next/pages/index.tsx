@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -17,6 +18,21 @@ export default function Home() {
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
+        </p>
+        <p className={styles.description}>
+          Available Page Routes
+         <Link href="/about" >
+          <a className={styles.code}>about page</a>
+         </Link> |
+         <Link href="/faq" >
+          <a className={styles.code}>faq page</a>
+         </Link>|
+         <Link href="/contact" >
+          <a className={styles.code}>Contact page</a>
+         </Link>|
+         <Link href="/api/random-number" >
+          <a className={styles.code}>random number api</a>
+         </Link>
         </p>
 
         <div className={styles.grid}>

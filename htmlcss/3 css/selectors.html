@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selectors</title>
+
+  <style>
+    *{
+      font-style: italic;
+    }
+    div {
+      color: blue
+    }
+    p{
+      color: gray;
+    }
+    .big{
+      font-size: 3rem;
+    }
+    .bold{
+      font-weight: bold;
+    }
+    #one{
+      background-color: coral;
+    }
+   
+   input[disabled]{
+     font-size: 2rem;
+   }
+   input[type=text]:focus {
+    font-size: 2rem;
+   }
+
+  </style>
+
+</head>
+<body>
+  <h1>Css selectors</h1>
+  <h3><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">Goto MDN CSS selectors docs</a>
+  </h3>
+  <hr>
+  <div class="big" id="one">Large text</div>
+  <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, ullam!</div>
+
+  <div class="big">Div with class big</div>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo eveniet pariatur nostrum!</p>
+  <p class="big bold">para with class</p>
+  <h3>lorem</h3>
+
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et magni quibusdam at officia, nostrum laudantium nesciunt natus nobis. Corrupti dolorem inventore laborum deserunt iure quas laudantium natus fugiat nam earum.</p>
+  <br>
+  <input type="text" value="input">
+  <input disabled type="text" value="input disabled">
+</body>
+</html>

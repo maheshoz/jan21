@@ -21,6 +21,16 @@ console.log(' ' == 0);
 console.log('\n' == '\t');
 
 
+console.log([1,2] == [1,2]) // false
+
+console.log('=====');
+let arr = [1,2]
+let arr2 = arr
+
+console.log(arr2 == arr); // true
+
+
+
 
 
 

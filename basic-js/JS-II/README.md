@@ -39,6 +39,110 @@ x('param2')
 MDN [this docs](https://developer.mozilla.org/en-us/docs/web/javascript/reference/operators/this)
 
 ```js
+// this 
+// this is bound at run time by called object 
+// all keys are strings in object
 
+function checkThis() {
+  console.log(this)
+}
+
+checkThis();
+
+let obj = {
+  a: 10,
+  b: 'a string',
+  c: true,
+  d: function() {
+    console.log(this);
+  },
+  10 : 222,
+  true: 'asd',
+  e: {
+    l: 22,
+    m:'asdf',
+    n: function() {
+      console.log(this);
+    }
+  }
+}
+
+// all keys are strings in object
+
+// console.log(obj.10);
+console.log(obj['10']);
+console.log(obj['a']);
+console.log(obj.a);
+
+console.log(obj.d())
+
+
+let y = obj.e
+console.log(y);
+
+let z = obj.d
+console.log(z === obj.d);
+//true
+
+console.log(typeof z);
+// 'function'
+
+z() // window
+
+console.log(obj.e.n()) // obj
+```
+
+### String literals
+```js
+// String literals use `` with ${} 
+
+
+let s1 = 'we use "javascript" to add interactivity'
+let s2 = "we use \"javascript \" to add interactivity"
+
+console.log(s1);
+console.log(s2);
+
+let s3 = 'this is \nmultiple lines'
+console.log(s3);
+
+let s4 = `this is
+a multi line 
+string
+in 
+js
+`
+
+console.log(s4);
+
+let js = 'javascript'
+
+let greet = 'hello ' + js;
+console.log(greet);
+
+let greet2 = `hello ${js}`
+console.log(greet2);
+
+let num = `22 + 33 ${22 + 33}`
+console.log(num);
+
+console.log(`date is ${new Date().getDate()}`);
 
 ```
+### Equality comparisions
+
+MDN [equlity comparisions link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+
+[equalilty table](https://dorey.github.io/JavaScript-Equality-Table/)
+
+```js
+
+```
+
+
+
+
+
+
+
+
